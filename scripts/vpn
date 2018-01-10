@@ -5,7 +5,7 @@
 # Create certificate
 cd /data/key_files
 ipsec pki --gen --outform pem > ca.pem
-ipsec pki --self --in ca.pem --dn "C=cn, O=ilove, CN=Free vpn" --ca --lifetime 3650 --outform pem >ca.cert.pem
+ipsec pki --self --in ca.pem --dn "C=cn, O=ilove, CN=ikev2" --ca --lifetime 3650 --outform pem >ca.cert.pem
 ipsec pki --gen --outform pem > server.pem
 ipsec pki --gen --outform pem > client.pem
 ipsec pki --pub --in server.pem | ipsec pki --issue --lifetime 1200 --cacert ca.cert.pem --cakey ca.pem --dn "C=cn, O=ilove, CN=$HOSTIP" --san="$HOSTIP" --flag serverAuth --flag ikeIntermediate --outform pem > server.cert.pem
