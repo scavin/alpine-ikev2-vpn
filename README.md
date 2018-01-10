@@ -67,6 +67,10 @@ VDqjxrbBG+NdgjQm71vCNayb0gwv0qPkU5YLnY8pqloltN6l4fBqkUEqKvqSwA==
 ```
 
 4. Copy this certificate to the remote client and name it xxx.cert or xxx.cert（Note：Windows need to modify the suffix pem for cer can be installed）
+
+```
+openssl x509 -in xxx.cert -out xxx.pem -outform PEM
+```
 example:<br>
 ![](https://github.com/aliasmee/alpine-ikev2-vpn/blob/master/IKEv2_enable_example.png?raw=true)
 
